@@ -1,4 +1,4 @@
-# dibster.github.io
+# dibsteryt.github.io
 My personal github site.
 
 **W.I.P.**
