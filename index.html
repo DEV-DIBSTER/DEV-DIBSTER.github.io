@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="/Styles/index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<center><h1>Hi, I'm Adib!</h1></center>
-<center><p>PLANNED LATER THIS YEAR</p></center>
-</body>
+  <head>
+    <link rel="stylesheet" href="/Styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
 
-<footer>
-  <p id="Copyright"></p>
-  <script>
-    document.getElementById("Copyright").textContent = `DIBSTER © 2020 - ${new Date().getFullYear()}`;
-  </script>
-</footer>
+  <body>
+    <center><h1>Hi, I'm Adib!</h1></center>
+    <center><p>PLANNED LATER THIS YEAR</p></center>
+    
+    <center><p id="Count"></p></center>
+
+    <script>
+      let Seconds = 0;
+
+      setInterval(() => {
+        document.getElementById("Count").textContent = `Seconds since you were here: ${Seconds}`;
+
+        Seconds++;
+      }, 1000);
+    </script>
+  </body>
+
+  <footer>
+    <p id="Copyright"></p>
+    <script>
+      document.getElementById("Copyright").textContent = `DIBSTER © 2020 - ${new Date().getFullYear()}`;
+    </script>
+  </footer>
 
 </html>
