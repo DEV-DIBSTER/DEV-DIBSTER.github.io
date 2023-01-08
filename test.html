@@ -1,11 +1,56 @@
-<!DOCTYPE html>
 <html>
+  <head>
+    <title>New Year Countdown</title>
+    <style>
+      body {
+        background: #000 url('https://media1.giphy.com/media/aGeePr7nv6ra8/giphy.gif') no-repeat center center;
+        background-size: cover;
+      }
+      #countdown {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="countdown">Loading countdown...</h1>
 
-<head>
-  <link rel="stylesheet" href="/Styles/index.css">
-</head>
-<body>
+    <script>
+      // Set the target date for the countdown (New Year's Eve)
+      const targetDate = new Date("December 31, 2023 23:59:59");
 
-<center><h1>This is testing.</h1></center>
-</body>
+      // Update the countdown every 1 second
+      setInterval(updateCountdown, 1000);
+
+      function updateCountdown() {
+        // Get the current date and time
+        const now = new Date();
+
+        // Calculate the time remaining until the target date
+        const timeRemaining = targetDate - now;
+
+        // Convert the time remaining to days, hours, minutes, and seconds
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // Calculate the percentage of time elapsed
+        const timeElapsed = (now - new Date("January 1, 2021 00:00:00")) / (targetDate - new Date("January 1, 2021 00:00:00"));
+
+        // Calculate the color of the countdown text based on the elapsed time
+        const hue = Math.round(timeElapsed * 360);
+        const color = `hsl(${hue}, 100%, 50%)`;
+
+        // Update the countdown on the page
+        document.getElementById("countdown").innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until the new year!`;
+        document.getElementById("countdown").style.color = color;
+      }
+    </script>
+  </body>
+</html>      }
+    </script>
+  </body>
 </html>

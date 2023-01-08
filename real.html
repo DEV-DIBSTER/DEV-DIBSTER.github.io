@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>DIBSTER Introduction</title>
+    <style>
+      body {
+        background-color: #14152a;
+        font-family: "Segoe UI";
+      }
+      #text {
+        font-size: 32px;
+        text-align: center;
+        color: rgb(175, 175, 175);
+      }
+      footer {
+        position: fixed;
+        bottom: 10px;
+        left: 20px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text"></p>
+    <footer>© 2020 - 2023 DIBSTER</footer>
+
+    <script>
+      const messages = [
+        "Hi, I'm DIBSTER!",
+        "I'm a open source developer that tries to do lots of things.",
+        "I'm 15 and I'm from the United States.",
+      ];
+
+      let index = 0;
+      function updateText() {
+        // Get the text element
+        const textElement = document.getElementById("text");
+
+        // Split the message into individual characters
+        const message = messages[index];
+        const characters = message.split("");
+
+        // Type out the message one character at a time
+        let i = 0;
+        const typeInterval = setInterval(() => {
+          textElement.innerHTML += characters[i];
+          i++;
+          if (i === characters.length) {
+            clearInterval(typeInterval);
+            // Wait a short delay before deleting the text
+            setTimeout(() => {
+              const deleteInterval = setInterval(() => {
+                textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+                if (textElement.innerHTML.length === 0) {
+                  clearInterval(deleteInterval);
+                  index = (index + 1) % messages.length;  // Move to the next message
+                  updateText();  // Type out the next message
+                }
+              }, 50);
+            }, 1000);
+          }
+        }, 50);
+      }
+      updateText();
+    </script>
+  </body
