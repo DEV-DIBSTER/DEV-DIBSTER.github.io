@@ -15,17 +15,8 @@
       footer {
         position: fixed;
         bottom: 10px;
-        left: 20px;
+        right: 10px;
         font-size: 12px;
-      }
-      .social-media {
-        position: fixed;
-        bottom: 10px;
-        right: 20px;
-      }
-      .social-media i {
-        font-size: 32px;
-        color: white;
       }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -33,12 +24,6 @@
   <body>
     <p id="text"></p>
     <footer>© 2020 - 2023 DIBSTER</footer>
-    <div class="social-media">
-      <a href="https://discord.com/users/757296951925538856">
-        <i class="fab fa-discord"></i>
-      </a>
-    </div>
-
     <script>
       const messages = [
         "Hi, I'm DIBSTER!",
@@ -47,6 +32,7 @@
       ];
 
       let index = 0;
+
       function updateText() {
         // Get the text element
         const textElement = document.getElementById("text");
@@ -80,4 +66,3 @@
     </script>
   </body>
 </html>
-
