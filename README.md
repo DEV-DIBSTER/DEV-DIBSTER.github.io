@@ -1,4 +1,4 @@
-# DIBSTERYT.github.io
+# devdibster.github.io
 
 Redirect to main portfolio site. Nothing else.
 
